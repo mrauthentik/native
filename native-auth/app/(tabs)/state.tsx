@@ -19,7 +19,8 @@ export default function State(){
 
     const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 0,
+    flexDirection: 'column',
     padding: 20,
     backgroundColor: '#f5f5f5',
   },

@@ -5,7 +5,7 @@ export default function NavBar() {
     const styles = StyleSheet.create({
         nav: {
             backgroundColor: 'black',
-            marginTop: 20,
+            marginTop: 3,
             color:'white',
             fontSize: 20,
              fontWeight: 'bold', 
