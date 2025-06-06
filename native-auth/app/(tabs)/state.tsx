@@ -19,7 +19,7 @@ export default function State(){
 
     const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     padding: 20,
     backgroundColor: '#f5f5f5',
   },

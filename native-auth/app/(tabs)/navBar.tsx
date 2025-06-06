@@ -1,10 +1,21 @@
-import {Text} from "react-native";
+import {StyleSheet, Text} from "react-native";
 
 
 export default function NavBar() {
+    const styles = StyleSheet.create({
+        nav: {
+            backgroundColor: 'brown',
+            marginTop: 20,
+            fontSize: 20,
+             fontWeight: 'bold', 
+            textAlign: 'center', 
+            padding: 10,
+            
+        }
+    })
     return (
-        <Text style={{fontSize: 20, fontWeight: 'bold', textAlign: 'center', padding: 10, backgroundColor: '#f8f8f8'}}>
-        Native Auth Navigation Bar
+        <Text style={styles.nav}>
+        Create TodoList
         </Text>
     );
 
