@@ -2,7 +2,7 @@ import { useState } from "react";
 import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import NavBar from "./navBar";
 const Stack = createNativeStackNavigator()
 
 
@@ -25,6 +25,9 @@ export default function App () {
   }
 
   return (
+    <View style={{ flex: 1 }}>
+      <NavBar />
+
     <View style={styles.container}>
       <Text style={styles.text}>Welcome to the App!</Text>
       <Button title="Press Me" onPress={handlePress} />
@@ -37,6 +40,7 @@ export default function App () {
 
       <Button title={`Count: ${count}`} onPress={countHandler}></Button>
     
+    </View>
     </View>
   )
 }
