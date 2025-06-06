@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, Button, FlatList, TouchableOpacity } from 'react-native';
-
+import NavBar from './navBar';
 
 export default function State(){
     const [task, setTask] = useState('');
@@ -19,10 +19,12 @@ export default function State(){
 
     const styles = StyleSheet.create({
   container: {
-    flex: 0,
+    // flex: 0,
+    width: '100%',
     flexDirection: 'column',
-    padding: 20,
+    padding: 50,
     backgroundColor: '#f5f5f5',
+    minHeight:1000,
   },
   title: {
     fontSize: 24,
@@ -63,6 +65,7 @@ export default function State(){
 
     return (
         <View style={styles.container}> 
+         <NavBar/>
             <Text style = {styles.title}> To-Do-List</Text>
             <View style={styles.inputContainer}>
                 <TextInput
@@ -72,6 +75,8 @@ export default function State(){
                 onChangeText={setTask}
                 />
                     <Button title='Add Task' onPress={handleAddTask} />
+
+            </View>
                  <FlatList
                   data={tasks}
                   keyExtractor={(item)=> item.id}
@@ -81,13 +86,11 @@ export default function State(){
                         <TouchableOpacity onPress={()=> handleDeleteTask(item.id)}>
                             <Text style={styles.deleteText}>Delete🗑️</Text>
                         </TouchableOpacity>
-
                     </View>
                   )}
                  >
                     
                     </FlatList>   
-            </View>
         </View>
     )
 
