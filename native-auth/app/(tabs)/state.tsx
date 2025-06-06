@@ -4,17 +4,27 @@ import NavBar from './navBar';
 
 export default function State(){
     const [task, setTask] = useState('');
-    const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
+    const [tasks, setTasks] = useState<{ id: string; text: string, createdAt: number }[]>([]);
 
     const handleAddTask = () =>{
         if(task.trim()){
-            setTasks([...tasks, {id: Date.now().toString(), text: task}]);
+            setTasks([...tasks, {id: Date.now().toString(), text: task, createdAt: Date.now()}]);
             setTask('');
         }
     }
 
     const handleDeleteTask = (id:string) => {
         setTasks (tasks.filter((task)=> task.id !== id))
+    }
+
+    const formatTime = (timeStamp: number) =>{
+        const date = new Date(timeStamp)
+         return date.toLocaleString('en-Us', {
+            weekday: 'short',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true,
+         })
     }
 
     const styles = StyleSheet.create({
@@ -61,6 +71,11 @@ export default function State(){
     color: 'red',
     fontSize: 18,
   },
+   timeText: {
+            color: '#888',
+            fontSize: 12,
+            marginLeft: 10,
+        }
 });
 
     return (
@@ -83,6 +98,9 @@ export default function State(){
                   renderItem={({item})=> (
                     <View style={styles.taskItem}>
                         <Text> {item.text}</Text>
+                       <Text style={styles.timeText}>
+                                {formatDate(item.createdAt)}
+                            </Text>
                         <TouchableOpacity onPress={()=> handleDeleteTask(item.id)}>
                             <Text style={styles.deleteText}>Delete🗑️</Text>
                         </TouchableOpacity>
