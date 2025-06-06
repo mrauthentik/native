@@ -17,7 +17,19 @@ export default function State(){
         setTasks (tasks.filter((task)=> task.id !== id))
     }
 
+    const styles = StyleSheet.create({
+        container: {
+
+        }
+    })
+
     return (
-        
+        <View style={styles.container}> 
+            <Text style = {styles.title}> To-Do-List</Text>
+            <View style={styles.inputContainer}>
+
+            </View>
+        </View>
     )
+
 }
