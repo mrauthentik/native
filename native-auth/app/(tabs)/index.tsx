@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button, TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NavBar from "./navBar";
+import State from "./state";
 const Stack = createNativeStackNavigator()
 
 
@@ -27,6 +28,7 @@ export default function App () {
   return (
     <View style={{ flex: 1 }}>
       <NavBar />
+      <State />
 
     <View style={styles.container}>
       <Text style={styles.text}>Welcome to the App!</Text>
