@@ -27,7 +27,13 @@ export default function State(){
         <View style={styles.container}> 
             <Text style = {styles.title}> To-Do-List</Text>
             <View style={styles.inputContainer}>
-
+                <TextInput
+                style={styles.input}
+                placeholder='Add a new task...'
+                value={task}
+                onChangeText={setTask}
+                />
+                    <Button title='Add Task' onPress={handleAddTask} />
             </View>
         </View>
     )
