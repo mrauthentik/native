@@ -99,7 +99,7 @@ export default function State(){
                     <View style={styles.taskItem}>
                         <Text> {item.text}</Text>
                        <Text style={styles.timeText}>
-                                {formatDate(item.createdAt)}
+                                {formatTime(item.createdAt)}
                             </Text>
                         <TouchableOpacity onPress={()=> handleDeleteTask(item.id)}>
                             <Text style={styles.deleteText}>Delete🗑️</Text>
