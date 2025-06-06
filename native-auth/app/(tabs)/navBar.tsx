@@ -4,8 +4,9 @@ import {StyleSheet, Text} from "react-native";
 export default function NavBar() {
     const styles = StyleSheet.create({
         nav: {
-            backgroundColor: 'brown',
+            backgroundColor: 'black',
             marginTop: 20,
+            color:'white',
             fontSize: 20,
              fontWeight: 'bold', 
             textAlign: 'center', 
